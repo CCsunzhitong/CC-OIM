@@ -1,0 +1,81 @@
+<view class="page" data-weui-theme="{{theme}}">
+	<form bindsubmit="handleSubmit"wx:if="{{projectname==''}}">
+		<view class="weui-form">
+			<view class="weui-form__control-area my-form">
+				<view class="weui-cells__group weui-cells__group_form">
+				<view class="weui-form__text-area">
+			<h2 class="weui-form__title">项目工时查询</h2>
+			<!--<view class="weui-form__desc">输入更多内容的输入区域样式展示</view>-->
+		</view>
+					<view class="weui-cells weui-cells_form">
+						<view class="weui-cell weui-cell_active">
+							<view class="weui-cell__hd"><label class="weui-label">项目名称</label></view>
+							<view class="weui-cell__bd">
+								<picker bindchange="siteChange" value="{{siteIndex}}" range="{{site}}" range-key="title">
+									<input class="weui-input" disabled="disabled" name="siteName" value="{{siteName}}" placeholder="请选择项目名称" placeholder-class="weui-input__placeholder"/>
+								</picker>
+							</view>
+						</view>
+			</view>		
+           
+	
+				
+				</view>
+			</view>
+			<view>
+				<button type="primary" form-type="submit">查询</button>
+			</view>
+
+			<view class="weui-form__extra-area">
+				<view class="weui-footer">
+					<view class="weui-footer__text">Copyright © 2020 SAICMOTOR</view>
+				</view>
+			</view>
+		</view>
+	</form>
+<view wx:else>
+	<view class="weui-cells weui-cells_form">
+  		<view class="weui-cells__title">项目信息</view>
+						<view class="weui-cell weui-cell_active">
+							<view class="weui-cell__hd"><label class="weui-label">项目名称</label></view>
+							<view class="weui-cell__bd">
+								<input class="weui-input" value="{{username}}" name="username" placeholder="自动动获取" placeholder-class="weui-input__placeholder" disabled="disabled" />
+							</view>
+						</view>
+						<view class="weui-cell weui-cell_active">
+							<view class="weui-cell__hd"><label class="weui-label">项目负责人</label></view>
+							<view class="weui-cell__bd">
+								<input class="weui-input" value="{{staffId}}" name="staffId" placeholder="自动获取" placeholder-class="weui-input__placeholder" disabled="disabled" />
+							</view>
+						</view>
+            		<view class="weui-cells__title">项目工时预览</view>
+						<view class="weui-cell weui-cell_active">
+                <view class="table">
+                <view class="tr bg-w">
+                   <view class="th">姓名</view>
+                  <view class="th">本周工时</view>
+                   <view class="th ">本月工时</view>
+                    <view class="th ">总工时</view>
+                </view>
+             <block wx:for="{{listData}}" wx:key="{[code]}">
+                  <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td">{{item.code}}</view>
+                 <view class="td">{{item.text}}</view>
+                 <view class="td">{{item.type}}</view>
+                  <view class="td ">{{item.type2}}</view>
+                  </view>
+                   <view class="tr" wx:else>
+                  <view class="td">{{item.code}}</view>
+                  <view class="td">{{item.text}}</view>
+                  <view class="td">{{item.type}}</view>
+                  <view class="td ">{{item.type2}}</view>
+                   </view>
+             </block>
+            </view>
+           </view>
+         </view>
+         <view class="container">
+           <ec-canvas id="mychart-dom-bar" style="width:80%;height:250px;" canvas-id="mychart-bar" ec="{{ ec }}" force-use-old-canvas="true"></ec-canvas>
+          </view>
+</view>
+</view>

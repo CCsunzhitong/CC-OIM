@@ -1,0 +1,169 @@
+
+
+ 
+ .bg-w{
+  background: snow;
+ }
+ .bg-g{
+  background: #E6F3F9;
+ }
+ 
+
+ 
+
+ input,textarea{
+  border: 1rpx solid #ccc;
+}
+
+.kind-list__item{
+  margin:10px 0;
+  background-color:
+  var(--weui-BG-2);
+  border-radius:2px;
+  overflow:hidden}
+  .kind-list__item:first-child{margin-top:0}
+  .kind-list__item-hd{padding:0px;-webkit-transition:opacity .3s;transition:opacity .3s}
+  .kind-list__item-hd_show{opacity:.4}
+  .kind-list__item-bd{height:0;overflow:hidden}
+  .kind-list__item-bd_show{height:auto}
+.my-form{
+  display: flex;
+  margin: 5rpx;
+}
+.my-textarea{
+  height: 150rpx;
+}
+.item1{
+  display: flex;
+  margin: 10rpx;
+}
+textarea {
+  height: 150rpx;
+}
+.btn1 {
+  width: 90%;
+  margin-top: 10rpx;
+  background-color:rgb(161, 109, 210);
+  color: #FFF;
+}
+.btn2 {
+  width: 90%;
+  margin-top: 10rpx;
+  background-color:gray;
+  color: #FFF;
+}
+.btn3 {
+  width: 90%;
+  margin-top: 10rpx;
+  background-color: #FFCC00;
+  color: #FFF;
+}
+
+.camera-container{
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10rpx;
+}
+
+.camerabgImage-view{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+}
+.bgImage{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+ 
+.cameratop-view1{
+  margin-top: 174rpx;
+}
+.cameratop-view2{
+  margin-top: 220rpx;
+}
+.cameratop-view1, .cameratop-view2{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  writing-mode: vertical-lr;
+ 
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+}
+ 
+.cameracenter-view{
+  height: 44rpx;
+  width: 100%;
+  position: absolute;
+  writing-mode: vertical-lr;
+ 
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+}
+/* .weui-btn_cell-primary{
+
+} */
+.myClass{
+  font-size: small;
+}
+ .myspan{
+  width:80%;
+  word-break:normal;
+  display:block;
+  white-space:pre-wrap;
+  overflow:hidden;
+  
+ }
+/* 底部 */
+.camerabotton-view{
+  height: 200rpx;
+  width: 100%;
+  position:absolute;
+ 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cancelphoto{
+  width: 50rpx;
+  height: 50rpx;
+}
+.takephoto{
+  width: 132rpx;
+  height: 132rpx;
+}
+.skipphoto{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.RepairItem{
+  margin: 25rpx;
+  border: 1px solid black;
+  font-size: 32rpx;
+}
+
+.FontColor{
+  color: dodgerblue;
+  
+}
+.homework {
+  -webkit-line-clamp: 1;  /*最多显示5行*/
+  overflow: hidden;  /*超出隐藏*/
+  white-space:nowrap;  
+  -webkit-box-orient: vertical;
+}

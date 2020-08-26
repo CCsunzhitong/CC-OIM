@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/DepartmentDetail/DepartmentDetail",
+    "pages/FromApply/FromApply",
+    "pages/WorkDetail/WorkDetail",
+    "pages/regist/regist",
+    "pages/End/End"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "问题清单管理系统",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/regist/regist",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home_active.png"
+      },
+      {
+        "pagePath": "pages/FromApply/FromApply",
+        "text": "发起问题",
+        "iconPath": "icons/FormApply.png",
+        "selectedIconPath": "icons/FormApply_active.png"
+      },
+      {
+        "pagePath": "pages/WorkDetail/WorkDetail",
+        "text": "分析解决",
+        "iconPath": "icons/repairRecord.png",
+        "selectedIconPath": "icons/repairRecord_active.png"
+      },
+      {
+        "pagePath": "pages/DepartmentDetail/DepartmentDetail",
+        "text": "分析解决",
+        "iconPath": "icons/repairRecord.png",
+        "selectedIconPath": "icons/repairRecord_active.png"
+      },
+      {
+        "pagePath": "pages/End/End",
+        "text": "问题归档",
+        "iconPath": "icons/repairRecord.png",
+        "selectedIconPath": "icons/repairRecord_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
