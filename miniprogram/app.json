@@ -1,10 +1,16 @@
 {
   "pages": [
+    "pages/regist/regist",
+    "pages/Submit/Submit",
+    "pages/Query/Query",
+    "pages/Solve/Solve",
+   
     "pages/DepartmentDetail/DepartmentDetail",
     "pages/FromApply/FromApply",
     "pages/WorkDetail/WorkDetail",
-    "pages/regist/regist",
+    
     "pages/End/End"
+  
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -22,29 +28,24 @@
         "selectedIconPath": "icons/home_active.png"
       },
       {
-        "pagePath": "pages/FromApply/FromApply",
+        "pagePath": "pages/Submit/Submit",
         "text": "发起问题",
         "iconPath": "icons/FormApply.png",
         "selectedIconPath": "icons/FormApply_active.png"
       },
       {
-        "pagePath": "pages/WorkDetail/WorkDetail",
+        "pagePath": "pages/Solve/Solve",
         "text": "分析解决",
         "iconPath": "icons/repairRecord.png",
         "selectedIconPath": "icons/repairRecord_active.png"
       },
       {
-        "pagePath": "pages/DepartmentDetail/DepartmentDetail",
-        "text": "分析解决",
-        "iconPath": "icons/repairRecord.png",
-        "selectedIconPath": "icons/repairRecord_active.png"
-      },
-      {
-        "pagePath": "pages/End/End",
-        "text": "问题归档",
+        "pagePath": "pages/Query/Query",
+        "text": "问题查询",
         "iconPath": "icons/repairRecord.png",
         "selectedIconPath": "icons/repairRecord_active.png"
       }
+    
     ]
   },
   "style": "v2",

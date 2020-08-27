@@ -51,7 +51,7 @@ const cloudfile = function () {
   return uuid
 }
 
-var url = "https://securityapp20200618080146.azurewebsites.net"; //"https://wechatapp002.azurewebsites.net"; //"https://www.ppaper.com.cn/"; //
+var url = "https://www.jslvtong.cn/"; //"https://wechatapp002.azurewebsites.net"; //"https://www.ppaper.com.cn/"; //
 const getUrl = function(api) {
   return url + api;// + "?";
 }

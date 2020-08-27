@@ -111,13 +111,13 @@ Page({
   
     if (!app.globalData.unionid ) {
       wx.cloud.callFunction({
-        name: 'login',
+        name: 'getOpenid',
         data: { weRunData: wx.cloud.CloudID(e.detail.cloudID) }
       }).then(res => {
         console.log(res);
         wx.setStorageSync('unionid',res.result.event.weRunData.data.unionId);//存储openid  
         app.globalData.unionid = res.result.event.weRunData.data.unionId
-        this.data.unionId=app.globalData.unionid
+        that.data.unionId= res.result.event.weRunData.data.unionId
       })
     }
     
@@ -127,93 +127,93 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var that=this
-    var api = "/api/Employee/GetEmployees";
-    var openid=wx.getStorageSync('openid')
-    var unionid=wx.getStorageSync('unionid');
-    console.log("unionid"+openid);
-     if(unionid!=""){
-       wx.request({
-          url: util.getUrl(api),
-          method: "GET",  
-          data:{
-            unionid: unionid
-          }  ,  
-          success(res) {
+    // var that=this
+    // var api = "/api/Employee/GetEmployees";
+    // var openid=wx.getStorageSync('openid')
+    // var unionid=wx.getStorageSync('unionid');
+    // console.log("unionid"+openid);
+    //  if(unionid!=""){
+    //    wx.request({
+    //       url: util.getUrl(api),
+    //       method: "GET",  
+    //       data:{
+    //         unionid: unionid
+    //       }  ,  
+    //       success(res) {
             
-           console.log("unionid"+res.data);
-           if(res.data!= ""&&res!=""){
-           that.setData({
-            fullName: res.data[0].name,
-            telephone:res.data[0].phone,
-            staffId:res.data[0].applyStaffId,
-            departmentName:res.data[0].department,
-            openid:openid,
-           }         
-           )        
+    //        console.log("unionid"+res.data);
+    //        if(res.data!= ""&&res!=""){
+    //        that.setData({
+    //         fullName: res.data[0].name,
+    //         telephone:res.data[0].phone,
+    //         staffId:res.data[0].applyStaffId,
+    //         departmentName:res.data[0].department,
+    //         openid:openid,
+    //        }         
+    //        )        
            
-           console.log(that.data);
-            app.globalData.username = that.data.fullName;
-            app.globalData.phoneNumber = that.data.telephone;
-            app.globalData.department = that.data.departmentName;
-            app.globalData.staffid=that.data.staffId;
-            console.log(app.globalData);
-            if (that.data.fullName != "") {
-              wx.showTabBar({
-                animation: false,
-              })
-            }
-          }
-           else{
-            // wx.hideLoading();
-            console.log("res.data is empty")
-           }
-           wx.hideLoading();
-         },
-         fail(res) {
-           console.log(res);
-          // wx.hideLoading();
-         }
-       })}
-       else if(openid!=""){
-        wx.request({
-          url: util.getUrl(api),
-          method: "GET",  
-          data:{
-            openid: openid
-          }  ,  
-          success(res) {
-           console.log("openod"+res.data);
-           if(res.data!= ""&&res!=""){
-           that.setData({
-            fullName: res.data[0].name,
-            telephone:res.data[0].phone,
-            staffId:res.data[0].applyStaffId,
-            departmentName:res.data[0].department,              
-           }         
-           )            
-           }
-           console.log(that.data);
-           app.globalData.username = that.data.fullName;
-           app.globalData.phoneNumber = that.data.telephone;
-           app.globalData.department = that.data.departmentName;
-           app.globalData.staffid=that.data.staffId;
-           if (that.data.fullName != "") {
-            wx.showTabBar({
-              animation: false,
-            })
-          }
-           else{
+    //        console.log(that.data);
+    //         app.globalData.username = that.data.fullName;
+    //         app.globalData.phoneNumber = that.data.telephone;
+    //         app.globalData.department = that.data.departmentName;
+    //         app.globalData.staffid=that.data.staffId;
+    //         console.log(app.globalData);
+    //         if (that.data.fullName != "") {
+    //           wx.showTabBar({
+    //             animation: false,
+    //           })
+    //         }
+    //       }
+    //        else{
+    //         // wx.hideLoading();
+    //         console.log("res.data is empty")
+    //        }
+    //        wx.hideLoading();
+    //      },
+    //      fail(res) {
+    //        console.log(res);
+    //       // wx.hideLoading();
+    //      }
+    //    })}
+    //    else if(openid!=""){
+    //     wx.request({
+    //       url: util.getUrl(api),
+    //       method: "GET",  
+    //       data:{
+    //         openid: openid
+    //       }  ,  
+    //       success(res) {
+    //        console.log("openod"+res.data);
+    //        if(res.data!= ""&&res!=""){
+    //        that.setData({
+    //         fullName: res.data[0].name,
+    //         telephone:res.data[0].phone,
+    //         staffId:res.data[0].applyStaffId,
+    //         departmentName:res.data[0].department,              
+    //        }         
+    //        )            
+    //        }
+    //        console.log(that.data);
+    //        app.globalData.username = that.data.fullName;
+    //        app.globalData.phoneNumber = that.data.telephone;
+    //        app.globalData.department = that.data.departmentName;
+    //        app.globalData.staffid=that.data.staffId;
+    //        if (that.data.fullName != "") {
+    //         wx.showTabBar({
+    //           animation: false,
+    //         })
+    //       }
+    //        else{
             
-           }
-           wx.hideLoading();
-         },
-         fail(res) {
+    //        }
+    //        wx.hideLoading();
+    //      },
+    //      fail(res) {
         
-          wx.hideLoading();
-         }
-       }) 
-       }
+    //       wx.hideLoading();
+    //      }
+    //    }) 
+    //    }
   },
 
   /**
@@ -222,19 +222,19 @@ Page({
   onShow: function () {
    var that=this 
 
-   if(that.data.fullName==""){
-    wx.hideTabBar({
-      animation: false,
-    })
-     wx.showLoading({
-     title: 'Loading...',
-       mask: true,
-   })
-  }
+  //  if(that.data.fullName==""){
+  //   wx.hideTabBar({
+  //     animation: false,
+  //   })
+  //    wx.showLoading({
+  //    title: 'Loading...',
+  //      mask: true,
+  //  })
+  // }
   
-  setTimeout(()=>{
-    that.onReady()
-  },1500)
+  // setTimeout(()=>{
+  //   that.onReady()
+  // },1500)
  
   },
 
